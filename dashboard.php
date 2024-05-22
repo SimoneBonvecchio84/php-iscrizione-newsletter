@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$user_mail = isset($_SESSION['mail']) ? S_SESSION['mail'] : 'sconosciuta';
+$user_mail = isset($_SESSION['mail']); 
 
 ?>
 
