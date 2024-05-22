@@ -7,6 +7,8 @@ require "partials/function.php";
 $correct_mail = "simo@mail.ciao";
 $user_mail = $_POST["mail"];
 
+
+
 // if (!isset($_SESSION)) {   // una volta inizializzata la sessione salviamo le info nell array $_SESSION
 //     session_start();       // inizializziamo la sessione
 // }
@@ -15,6 +17,7 @@ $user_mail = $_POST["mail"];
 
 $result = check_simbol($user_mail);
 
+$void_result = value_void($user_mail)
 
 
 
@@ -65,6 +68,10 @@ $result = check_simbol($user_mail);
                         <?php echo $result ? 
                            '<h2 class="text-success border border-success rounded py-2">La mail è corretta!</h2>' : 
                            '<h2 class="text-danger border border-danger rounded py-2"> La mail è sbagliata!</h2>' ?>
+                    </div>
+
+                    <div>
+                        <?php echo $void_result ? '<h2>Inserisci una mail</h2>' : "" ?>
                     </div>
                 </div>
             </div>
