@@ -1,16 +1,36 @@
 <?php
+
+// phpinfo(); die;
+
+require "partials/function.php";
+
 $correct_mail = "simo@mail.ciao";
+$user_mail = $_POST["mail"];
 
-if (!isset($_SESSION)) {
-    session_start();
-}
+// if (!isset($_SESSION)) {   // una volta inizializzata la sessione salviamo le info nell array $_SESSION
+//     session_start();       // inizializziamo la sessione
+// }
 
-if (isset($_POST["mail"])) {
-    $user_mail = $_POST["mail"];
-    if ($user_mail === $correct_mail) {
-        echo "mail corretta";
-    }
-}
+// $result = check_mail($user_mail, $correct_mail);
+
+$result = check_simbol($user_mail);
+
+
+
+
+
+var_dump($result);
+// isset controlla se la variabile è stata definita oppre no 
+// restitusce true se è stata definita e ha un valore diverso da null
+// altrimenti restituisce false 
+// if (isset($_POST["mail"])) {
+//     $user_mail = $_POST["mail"];
+//     if ($user_mail === $correct_mail) {
+//         echo "mail corretta";
+//     } else {
+//         echo "mail errata";
+//     }
+// }
 
 ?>
 
@@ -31,7 +51,7 @@ if (isset($_POST["mail"])) {
                 <form action="index.php" method="POST">
                     <div class="mb-3">
                         <label for="mail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" name="mail">
+                        <input type="text" class="form-control" id="mail" aria-describedby="emailHelp" name="mail">
                         <div id="emailHelp" class="form-text"></div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -39,7 +59,7 @@ if (isset($_POST["mail"])) {
             </div>
             <div class="col-6">
                 <h2>
-                    <?php $user_mail ?>
+                    <?php echo $result ? 'La mail è corretta!' : 'La mail è sbagliata!' ?>
                 </h2>
             </div>
         </div>
