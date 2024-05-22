@@ -19,7 +19,7 @@ $result = check_simbol($user_mail);
 
 
 
-var_dump($result);
+// var_dump($result);
 // isset controlla se la variabile è stata definita oppre no 
 // restitusce true se è stata definita e ha un valore diverso da null
 // altrimenti restituisce false 
@@ -46,8 +46,8 @@ var_dump($result);
 
 <body>
     <div class="container py-5">
-        <div class="row">
-            <div class="col-6">
+        <div class="row py-3">
+            <div class="col">
                 <form action="index.php" method="POST">
                     <div class="mb-3">
                         <label for="mail" class="form-label">Email address</label>
@@ -57,10 +57,16 @@ var_dump($result);
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div class="col-6">
-                <h2>
-                    <?php echo $result ? 'La mail è corretta!' : 'La mail è sbagliata!' ?>
-                </h2>
+        </div>
+        <div class="row py-3">
+            <div class="col text-center">
+                <div class="">
+                    <div>
+                        <?php echo $result ? 
+                           '<h1 class="text-success border border-success rounded py-2">La mail è corretta!</h1>' : 
+                           '<h1 class="text-danger border border-danger rounded py-2"> La mail è sbagliata!</h1>' ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
