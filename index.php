@@ -63,8 +63,8 @@ $result = check_simbol($user_mail);
                 <div class="">
                     <div>
                         <?php echo $result ? 
-                           '<h1 class="text-success border border-success rounded py-2">La mail è corretta!</h1>' : 
-                           '<h1 class="text-danger border border-danger rounded py-2"> La mail è sbagliata!</h1>' ?>
+                           '<h2 class="text-success border border-success rounded py-2">La mail è corretta!</h2>' : 
+                           '<h2 class="text-danger border border-danger rounded py-2"> La mail è sbagliata!</h2>' ?>
                     </div>
                 </div>
             </div>
