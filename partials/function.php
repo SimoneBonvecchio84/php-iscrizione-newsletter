@@ -1,5 +1,6 @@
 <?php
 
+
 function check_mail($mail_value, $user_mail) {
     return $mail_value === $user_mail ? true : false;
 }
@@ -10,4 +11,11 @@ function check_simbol($mail_value) {
 
 function value_void($mail_value) {
     return empty($mail_value);
+}
+
+function check_auth() {
+    if(!isset($_SESSION["auth"]) || $_SESSION["auth"] !== true) {
+        header("location: ./index.php");
+        die();
+    }
 }
