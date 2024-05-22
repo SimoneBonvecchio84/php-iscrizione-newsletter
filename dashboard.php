@@ -14,11 +14,16 @@ $user_mail = isset($_SESSION['mail']);
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Grazie Mille!</h1>
-        <h2>Benvenuto gentile utente
-            <?php $user_mail; ?>
-        </h2>
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col text-center text-success border border-success rounded  ">
+                <h1 class="py-3">Grazie Mille!</h1>
+                <h2 class="py-3">Benvenuto gentile utente!
+                    <?php $user_mail; ?>
+                </h2>
+
+            </div>
+        </div>
     </div>
 </body>
 </html>
